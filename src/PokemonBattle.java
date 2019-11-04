@@ -32,11 +32,12 @@ public class PokemonBattle {
 	public static String battleStart() {
 		System.out.println("Another trainer is issuing a challenge");
 		System.out.println("Zebstrika appeared.");
-		System.out.println("Which Pokemon do you choose?");
+		System.out.print("Which Pokemon do you choose? ");
 		Scanner console = new Scanner (System.in);				/*prompts user input for pokemon name*/
 		String name = console.nextLine();						/*stores name into a string for later use*/
 		System.out.println("You chose " + name);
 		System.out.println("It's a Pokemon battle between " + name + " and Zebstrika! Go!");
+		System.out.println();
 		return name;
 	}
 	
@@ -46,24 +47,19 @@ public class PokemonBattle {
 		System.out.println("Trainer, what are your " + name + "'s stats?");
 		
 		/*prompts for user input for base stats*/
-		System.out.println("Level: ");
-		Scanner ui_level = new Scanner (System.in);				/*ui = user input, prompts for pokemon level*/
-		int level = ui_level.nextInt();							/*stores level as an int*/
-		System.out.println("Attack: ");
-		Scanner ui_attack = new Scanner (System.in);
-		double attack = ui_attack.nextDouble();					/*stores attack as a double*/
-		System.out.println("Defense: ");
-		Scanner ui_defense = new Scanner (System.in);
-		double defense = ui_defense.nextDouble();
-		System.out.println("Base: ");
-		Scanner ui_base = new Scanner (System.in);
-		double base = ui_base.nextDouble();
-		System.out.println("STAB: ");
-		Scanner ui_STAB = new Scanner (System.in);
-		double STAB = ui_STAB.nextDouble();
-		System.out.println("HP: ");
-		Scanner ui_HP = new Scanner (System.in);
-		double HP = ui_HP.nextDouble();
+		System.out.print("Level: ");
+		Scanner console = new Scanner (System.in);				/*makes a scanner for all inputs*/
+		int level = console.nextInt();							/*stores level as an int*/
+		System.out.print("Attack: ");
+		double attack = console.nextDouble();					/*stores attack as a double*/
+		System.out.print("Defense: ");
+		double defense = console.nextDouble();
+		System.out.print("Base: ");
+		double base = console.nextDouble();
+		System.out.print("STAB: ");
+		double STAB = console.nextDouble();
+		System.out.print("HP: ");
+		double HP = console.nextDouble();
 		
 		/*calculates using those user input values*/
 		double modifier = 0.85 + ((1.0 - 0.85)*Math.random());								/*finds a random number between 0.85 and 1.0*/
@@ -74,7 +70,8 @@ public class PokemonBattle {
 		return new_HP;
 	}
 	
-	public static void statsTable(String name, double new_HP) {
+	public static void statsTable(String name, double new_HP, double level, double attack, double defense, double sp_atk, double sp_def, double speed) {
+		System.out.print("Name" + name);
 		
 	}
 
