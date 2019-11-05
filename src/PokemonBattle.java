@@ -65,8 +65,12 @@ public class PokemonBattle {
 		/*calculates using those user input values*/
 		double modifier = 0.85 + ((1.0 - 0.85)*Math.random());								/*finds a random number between 0.85 and 1.0*/
 		double damage = (((2*level+10)/250)+(attack/defense)*base+2) * modifier;			/*formula*/
+		damage = (int)(damage*100);															/*leaves two decimal points for damage, this way doesn't round but it leaves two decimal points (doesn't use Math.round)*/
+		damage = damage/100;
 		System.out.println(name + " sustained " + damage + " points damage.");
 		double new_HP = HP - damage;														/*calculates the amount of HP left*/
+		new_HP = (int)(new_HP*100);															/*leaves two decimals for HP*/
+		new_HP = new_HP/100;
 		System.out.println("HP, after damage, are now " + new_HP);
 		System.out.println();
 		return new_HP;																		/*returns new_HP after damage for future use*/
