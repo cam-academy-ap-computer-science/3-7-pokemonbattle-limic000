@@ -27,6 +27,7 @@ public class PokemonBattle {
 	public static void main(String[] args) {
 		String name = battleStart();
 		double new_HP = damage(name);
+		statsTable(name, new_HP);
 	}
 	
 	public static String battleStart() {
@@ -38,7 +39,7 @@ public class PokemonBattle {
 		System.out.println("You chose " + name);
 		System.out.println("It's a Pokemon battle between " + name + " and Zebstrika! Go!");
 		System.out.println();
-		return name;
+		return name;											/*returns name for later use*/
 	}
 	
 	public static double damage(String name) {
@@ -67,12 +68,22 @@ public class PokemonBattle {
 		System.out.println(name + " sustained " + damage + " points damage.");
 		double new_HP = HP - damage;														/*calculates the amount of HP left*/
 		System.out.println("HP, after damage, are now " + new_HP);
-		return new_HP;
+		System.out.println();
+		return new_HP;																		/*returns new_HP after damage for future use*/
 	}
 	
-	public static void statsTable(String name, double new_HP, double level, double attack, double defense, double sp_atk, double sp_def, double speed) {
-		System.out.print("Name" + name);
-		
+	public static void statsTable(String name, double new_HP) {
+		/*prints out the stats table*/
+		System.out.println("Name" + "   "+ name);											/*can't do tab, using 3 spaces for uniformity*/
+		System.out.println("Level   40");
+		System.out.println("--------------------------");
+		System.out.println("HP:   " + new_HP);
+		System.out.println("ATTACK:   52");
+		System.out.println("DEFENSE:   51");
+		System.out.println("SP.ATK:   121");
+		System.out.println("SP.DEF:   81");
+		System.out.println("SPEED:   107");
+		System.out.println("--------------------------");
 	}
 
 }
